@@ -1,16 +1,20 @@
+import java.util.Comparator;
 import java.util.PriorityQueue;
 
 public class PriorityQueueL {
     public static void main(String[] args) {
-        PriorityQueue<Integer> numbers = new PriorityQueue<>();
-        numbers.add(100);
-        numbers.add(102);
-        numbers.add(12);
-        numbers.add(45);
+        Comparator<String> stringLengthComparator = (o1, o2) -> o2.length() - o1.length();
 
-        while (!numbers.isEmpty()) {
-            System.out.println(numbers.remove());
+        // Create priority queue.
+        PriorityQueue<String> stringQueue = new PriorityQueue<>(stringLengthComparator);
+
+
+        // Add item to the priority queue.
+        stringQueue.add("Mwiza");
+        stringQueue.add("Simbeye");
+
+        while (!stringQueue.isEmpty()){
+            System.out.println(stringQueue.remove());
         }
-
     }
 }
